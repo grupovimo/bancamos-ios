@@ -105,13 +105,13 @@ struct MiPagina: View {
     private var cabecera: some View {
         VStack(alignment: .leading, spacing: 0) {
             FotoRecortada(imagen: estado.yo.portada, zoom: 1).frame(height: 120)
-            HStack(alignment: .bottom, spacing: 12) {
+            HStack(alignment: .top, spacing: 12) {
                 Avatar(estado.yo, tamano: 72, aro: 4)
                 VStack(alignment: .leading, spacing: 2) {
                     Text(estado.yo.nombre).tipo(.titulo(22)).foregroundStyle(Color.tinta)
                     Text(estado.yo.link).tipo(.texto(14, 500)).foregroundStyle(Color.esmeralda700)
                 }
-                .padding(.bottom, 4)
+                .padding(.top, 42)
                 Spacer()
             }
             .padding(.horizontal, 16).padding(.top, -36).padding(.bottom, 16)
