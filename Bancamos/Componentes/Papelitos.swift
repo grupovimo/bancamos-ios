@@ -4,6 +4,8 @@ import SwiftUI
 struct Papelitos: View {
     var cantidad = 46
     var animar = true
+    /// Deja el centro casi limpio para que se lea el texto (como el diseño, que no tira papelitos sobre el contenido).
+    var centroLibre = true
     @State private var inicio = Date()
 
     private struct Papel {
@@ -34,6 +36,13 @@ struct Papelitos: View {
                     c.fill(Path(roundedRect: CGRect(x: -p.w / 2, y: -p.h / 2, width: p.w, height: p.h), cornerRadius: 2), with: .color(p.color))
                 }
             }
+        }
+        .mask {
+            if centroLibre {
+                LinearGradient(stops: [.init(color: .black, location: 0), .init(color: .black.opacity(0.08), location: 0.2),
+                                       .init(color: .black.opacity(0.08), location: 0.8), .init(color: .black, location: 1)],
+                               startPoint: .leading, endPoint: .trailing)
+            } else { Color.black }
         }
         .allowsHitTesting(false)
         .accessibilityHidden(true)

@@ -78,8 +78,7 @@ struct Metas: View {
                 Text(m.lograda ? "Cumplida el \(Fecha.dia(m.cumplida ?? m.creada)) · \(Plata.texto(m.recaudado))" : "Cerrada en \(m.porcentaje) % · \(Plata.texto(m.recaudado))")
                     .tipo(.texto(13, 400)).foregroundStyle(Color.gris)
             }
-            Spacer()
-            if m.lograda { Chip(texto: "Cumplida", tono: .ok, icono: .tilde) }
+            Spacer(minLength: 0)
         }
         .padding(.horizontal, 16).frame(minHeight: 64).contentShape(Rectangle())
     }

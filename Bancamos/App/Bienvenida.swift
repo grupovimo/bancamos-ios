@@ -172,7 +172,7 @@ private struct VisualDirecto: View {
                 BarraMeta(fraccion: lleno ? 1 : 0.92).padding(.top, 12)
                 Text("Bancamos se queda con el 3 %. Lo de Mercado Pago va aparte.").tipo(.texto(13, 400)).foregroundStyle(Color.gris).padding(.top, 8)
             }
-            .overlay { if lleno && activa { Papelitos(cantidad: 18).padding(-20).transition(.opacity) } }
+            .background { if lleno && activa { Papelitos(cantidad: 24, centroLibre: false).padding(-24).transition(.opacity) } }
             Spacer(minLength: 0)
         }
         .onAppear(perform: animar)

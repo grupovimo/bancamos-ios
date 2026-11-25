@@ -79,7 +79,6 @@ struct PaginaPublica: View {
         } else {
             HStack(spacing: 10) {
                 Boton(titulo: "Banc\(creador.femenino ? "ala" : "alo") una vez", variante: .prim, alto: .normal, ancho: true, habilitado: recibePagos) { bancar(.unaVez, nil) }
-                    .layoutPriority(1.2)
                 Boton(titulo: "Cada mes", variante: .osc, alto: .normal, ancho: true, habilitado: recibePagos && !creador.nivelesActivos.isEmpty) { bancar(.mensual, nil) }
             }
         }

@@ -6,7 +6,7 @@ enum SeccionPagina: String, CaseIterable, Hashable {
 
     var titulo: String {
         switch self {
-        case .datos: return "Nombre, link y rubro"
+        case .datos: return "Tus datos"
         case .fotos: return "Foto y portada"
         case .sobreMi: return "Sobre vos"
         case .redes: return "Tus redes"
@@ -124,7 +124,7 @@ struct MiPagina: View {
     private func resumen(_ s: SeccionPagina) -> String {
         let c = estado.yo
         switch s {
-        case .datos: return "\(c.nombre) · \(c.categoria.nombre)"
+        case .datos: return "Nombre, link y rubro: \(c.categoria.nombre)"
         case .fotos: return c.foto.existe && c.portada.existe ? "Listas" : "Falta completar"
         case .sobreMi: return c.sobreMi.isEmpty ? "Contá quién sos y para qué es la plata" : c.sobreMi
         case .redes: return c.redes.isEmpty ? "Instagram, YouTube, Twitch…" : c.redes.joined(separator: " · ")

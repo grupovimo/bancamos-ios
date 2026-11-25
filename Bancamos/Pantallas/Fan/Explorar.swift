@@ -186,10 +186,6 @@ struct DetallePosteoFan: View {
                     TarjetaPosteo(creador: c, posteo: p, bloqueado: !abierto,
                                   meGusta: { estado.meGusta(p.id, creadorId: c.id) },
                                   desbloquear: { nav.bancar(c.id, .mensual) })
-                    if abierto {
-                        Text(p.texto).tipo(.texto(16, 400)).foregroundStyle(Color.tinta).lineSpacing(3)
-                            .fixedSize(horizontal: false, vertical: true).padding(.horizontal, 4)
-                    }
                 }
                 .padding(.horizontal, Espacio.margen).padding(.bottom, 40)
             }

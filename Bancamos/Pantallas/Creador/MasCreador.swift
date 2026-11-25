@@ -174,12 +174,12 @@ struct CuentaMercadoPago: View {
                     Tarjeta(relleno: 16) {
                         HStack(spacing: 12) {
                             IconoVista(.mp, tamano: 30).foregroundStyle(.white).frame(width: 52, height: 52).background(Color.mp, in: Circle())
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(c.email).tipo(.texto(16, 700)).foregroundStyle(Color.tinta)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(c.email).tipo(.texto(16, 700)).foregroundStyle(Color.tinta).lineLimit(1).minimumScaleFactor(0.75)
                                 Text(c.desde.map { "Conectada desde el \(Fecha.dia($0))" } ?? "Conectada").tipo(.texto(13, 400)).foregroundStyle(Color.gris)
+                                Chip(texto: "Activa", tono: .ok, icono: .tilde)
                             }
-                            Spacer()
-                            Chip(texto: "Activa", tono: .ok, icono: .tilde)
+                            Spacer(minLength: 0)
                         }
                     }
                 } else {

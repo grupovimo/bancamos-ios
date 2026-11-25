@@ -181,7 +181,7 @@ struct FlujoApoyo: View {
                     Divisor()
                     FilaDato(etiqueta: "Cómo se paga", valor: "Te avisamos 3 días antes")
                 }
-                if let actual = estado.membresia(de: c.id) {
+                if let actual = estado.membresia(de: c.id), actual.nivelId != nivelId {
                     NotaSegura(texto: "Hoy estás en \(c.nivel(actual.nivelId)?.nombre ?? "otro nivel"). Pasás a \(n?.nombre ?? "") desde este pago.", icono: .capas)
                 }
                 NotaSegura(texto: "La plata va directo al Mercado Pago de \(c.primerNombre). Bancamos no la toca.")
